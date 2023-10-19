@@ -1,0 +1,14 @@
+version: 0.2
+
+phases:
+    build:
+        commands:
+            - echo Entered the buil phase...
+            - mvn clean package
+    post_build:
+        commands:
+            - echo Build completed successfully
+artifacts:
+    files:
+        - target/njangui_pro.jar
+    discard-paths: yes
