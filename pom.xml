@@ -66,5 +66,6 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>njangui_pro</finalName>
 	</build>
 </project>
