@@ -9,7 +9,7 @@ import fr.njangui_pro.entities.Membre;
 import fr.njangui_pro.repository.MembreRepository;
 
 @SpringBootApplication
-public class NjanguiProApplication implements CommandLineRunner{
+public class NjanguiProApplication{
 
 	@Autowired
 	private MembreRepository membreRepository;
@@ -18,12 +18,6 @@ public class NjanguiProApplication implements CommandLineRunner{
 		SpringApplication.run(NjanguiProApplication.class, args);
 	}
 
-	@Override
-	public void run(String... args) throws Exception {
-		
-		this.membreRepository.save(new Membre(0,"Bart","bart@yahoo.fr"));
-		this.membreRepository.save(new Membre(0,"Lisa","lisa@yahoo.fr"));
-		this.membreRepository.save(new Membre(0,"Omer","omer@gmail.com"));
-	}
+
 
 }

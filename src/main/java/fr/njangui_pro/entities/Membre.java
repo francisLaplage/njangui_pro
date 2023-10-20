@@ -19,7 +19,10 @@ public class Membre {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	private String name;
+	private String nom;
+	private String prenom;
 	private String email;
-
+	private String tel;
+	private String adresse;
+	private String photo;
 }
