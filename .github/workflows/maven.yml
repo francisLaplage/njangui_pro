@@ -6,7 +6,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Java CI with Maven
+name: Java CI with Maven AWS
 
 on:
   push:
@@ -17,9 +17,9 @@ jobs:
     name: create-folder
     runs-on: ubuntu-latest
     steps:
-     - name: create-folder on remote vm
-       uses: appleboy/ssh-action@v1.0.0
-       with:
+    - name: create-folder on remote vm
+      uses: appleboy/ssh-action@v1.0.0
+      with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PRIVATE_KEY }}
