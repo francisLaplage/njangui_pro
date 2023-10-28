@@ -14,17 +14,17 @@ on:
 
 jobs:
   create-folder:
-      name: create-folder
-      runs-on: ubuntu-latest
-      steps:
-      - name: create-folder on remote vm
-        uses: appleboy/ssh-action@v1.0.0
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PRIVATE_KEY }}
-          port: ${{ secrets.PORT }}
-          script: mkdir -p /opt/applications/sa
+    name: create-folder
+    runs-on: ubuntu-latest
+    steps:
+     - name: create-folder on remote vm
+       uses: appleboy/ssh-action@v1.0.0
+       with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PRIVATE_KEY }}
+        port: ${{ secrets.PORT }}
+        script: mkdir -p /opt/applications/sa
   build:
 
     runs-on: ubuntu-latest
