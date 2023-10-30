@@ -1,6 +1,7 @@
 package fr.njangui_pro.controleur;
 
 import java.util.List;
+import java.util.stream.Stream;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import fr.njangui_pro.dto.MembreDTO;
 import fr.njangui_pro.entities.Membre;
 import fr.njangui_pro.repository.MembreRepository;
 import fr.njangui_pro.service.MembreService;
@@ -24,7 +26,7 @@ public class MembresControleur {
 	private MembreService membreRepository;
 	
 	@GetMapping("/all")
-	public List<Membre> getAllMembre(){
+	public Stream<MembreDTO> getAllMembre(){
 		//return List.of(new Membre("Simpson", "simpson@gmail.com"));
 		return this.membreRepository.getAllMembre();
 	}
