@@ -8,9 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,26 +15,21 @@ import lombok.NoArgsConstructor;
 
 @Data @NoArgsConstructor @AllArgsConstructor
 @Entity
-@Table(name = "membre")
-public class Membre {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+public class Cahier {
+	
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String nom;
-	private String prenom;
-	private String email;
-	private String tel;
-	private String adresse;
-	private String photo;
-	
-	@ManyToOne
-	private Organisme organisme;
+	private int nombreNom;
 	
 	@ManyToMany
-	private List<Cahier> listeCahier = new ArrayList<Cahier>();
+	private List<Membre> listeMembres = new ArrayList<Membre>();
 
-	public Membre(int id) {
+	public Cahier(int id) {
 		super();
 		this.id = id;
 	}
+	
+	
+
 }

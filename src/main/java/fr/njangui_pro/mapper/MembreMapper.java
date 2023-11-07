@@ -8,16 +8,16 @@ import fr.njangui_pro.dto.MembreDTO;
 import fr.njangui_pro.entities.Membre;
 
 @Component
-public class MembreDTOMapper implements Function<Membre,MembreDTO>{
+public class MembreMapper implements Function<MembreDTO,Membre>{
 	@Override
-	public MembreDTO apply(Membre t) {
-		return new MembreDTO(t.getId(),
-				t.getNom(),t.getPrenom(),
+	public Membre apply(MembreDTO t) {
+		return null;
+				/*new Membre(t.getId(),t.getNom(),
+				t.getPrenom(),
 				t.getEmail(),
 				t.getTel(),
 				t.getAdresse(),
 				t.getPhoto(),
-				t.getOrganisme().getNom());
+				t.getOrganisme());*/
 	}
-
 }

@@ -1,5 +1,6 @@
 package fr.njangui_pro.dto;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,4 +16,6 @@ public class MembreDTO {
 	private String tel;
 	private String adresse;
 	private String photo;
+	
+	private String organisme;
 }
