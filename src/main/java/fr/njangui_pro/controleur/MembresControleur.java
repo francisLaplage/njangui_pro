@@ -17,7 +17,7 @@ import fr.njangui_pro.dto.MembreDTO;
 import fr.njangui_pro.entities.Membre;
 import fr.njangui_pro.service.MembreService;
 
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:4200/")
 @RestController
 //@RequestMapping(path = "/membres",produces = MediaType.APPLICATION_JSON_VALUE)
 @RequestMapping("/membres")
