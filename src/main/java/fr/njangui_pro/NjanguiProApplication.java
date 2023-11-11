@@ -1,9 +1,8 @@
 package fr.njangui_pro;
 
-import java.text.SimpleDateFormat;
+
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -46,12 +45,18 @@ public class NjanguiProApplication implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		
+		/************************************* 1- Création d'un Njangui (Exemple : Le PHOENIX*****************/
+		
 		this.organismeRepository.save(new Organisme(0,"PHOENIX",null, null, null,null));
+		
+		/*************************************2- Création d'un nouveau tour*******************************/
 		
 		this.tourRepository.save(new Tour(0,
 											this.tourService.convertStringToDate("2023/11/05"),
 											this.tourService.convertStringToDate("2024/05/05"),
 											new Organisme(1)));
+		
+		/********************************** 3- Enregistrement des membres au Njangui***********************/
 		
 		this.membreRepository.save(
 				new Membre(0,"Simpson","Bart","bart@gmail.com","042356987","Rue de picpus 112 75012 Paris","bart.jpg",new Organisme(1),null));
@@ -60,15 +65,16 @@ public class NjanguiProApplication implements CommandLineRunner{
 		this.membreRepository.save(
 				new Membre(0,"Simpson","omer","omer@gmail.com","042356987","Rue de picpus 112 75012 Paris","omer.jpg",new Organisme(1),null));
 		
-		String str = "Bonjour à tous et Bienvenue dans cette formation de Java 11";
 		
 		
-		/***************************Création des Cahiers ******************************************/
+		
+		/*************************** 4- Création des Cahiers *********************************************/
+		
 			this.cahierRepository.save(new Cahier(0,"Grand Cahier 1",14,new ArrayList<Membre>()));
 			this.cahierRepository.save(new Cahier(0,"Grand Cahier 2",14,new ArrayList<Membre>()));
 			this.cahierRepository.save(new Cahier(0,"Grand Cahier 3",14,new ArrayList<Membre>()));
 			
-		/*****************************Enregistrement des membres dans les cahiers*****************/
+		/***************************** 5- Enregistrement des membres dans les cahiers*********************/
 		
 		
 		this.membreService.addMembreToCahier(new Membre(1),new Cahier(1));
@@ -76,7 +82,10 @@ public class NjanguiProApplication implements CommandLineRunner{
 		this.membreService.addMembreToCahier(new Membre(2),new Cahier(1));
 		this.membreService.addMembreToCahier(new Membre(3),new Cahier(1));
 		
-		
+		/************************************************************************************************/
+
+	/*	
+	 String str = "Bonjour à tous et Bienvenue dans cette formation de Java 11";
 		str.lines().forEach(elt->System.out.println(elt));
 		
 		
@@ -95,7 +104,7 @@ public class NjanguiProApplication implements CommandLineRunner{
                System.out.println("Dans deux semaines, nous serons le: "+sdf.format(calendar.getTime()));
         }
         
-        
+       */ 
         
 	}
 }
